@@ -3,6 +3,7 @@ A basic finite state machine implementation for a lock. The implemntation was in
 # Usage
 
 **A simple lock**
+
 ```php
 <?php
 
@@ -34,6 +35,7 @@ try {
 ```
 
 **A time lock**
+
 ```php
 <?php
 
