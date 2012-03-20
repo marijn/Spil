@@ -2,6 +2,7 @@ A basic finite state machine implementation for a lock. The implemntation was in
 
 # Usage
 
+**A simple lock**
 ```php
 <?php
 
@@ -25,6 +26,26 @@ if ($lock->unlock($key)) {
 }
 
 // Try to unlock what is already unlocked
+try {
+    $lock->unlock($key);
+} catch (DomainException $e) {
+    printf("Error: %s", $e->getMessage());
+}
+```
+
+**A time lock**
+```php
+<?php
+
+$secret = '$3crt3t';
+
+// Create a Lock that is locked
+$lock = new Lock(new TemporalLockedState(new TimeFrame(new DateTime('yesterday morning'), new DateTime('yesterday noon'))), $secret);
+
+// Create a "fitting" key
+$key = new Key($secret);
+
+// Try to unlock (outside of the created timeframe)
 try {
     $lock->unlock($key);
 } catch (DomainException $e) {
