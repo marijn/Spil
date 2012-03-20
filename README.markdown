@@ -55,4 +55,4 @@ try {
 }
 ```
 
-[1]: http://stackoverflow.com/questions/4274031/php-state-machine-framework
+[1]: http://stackoverflow.com/questions/4274031/php-state-machine-framework#answer-4275232
