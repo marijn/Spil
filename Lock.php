@@ -3,11 +3,16 @@
 final class Lock
 {
     private $teeth;
-    
-    public function __construct($teeth, LockState $state = null)
+
+    public function __construct($teeth, LockState $state)
     {
         $this->teeth = $teeth;
-        $this->state = $state ?: new LockedState;
+
+        if (null === $state) {
+            throw new InvalidArgumentException("No state was passed");
+        }
+
+        $this->state = $state;
     }
     
     public function lock(Key $key)
