@@ -2,22 +2,15 @@
 
 namespace Spil\LockState;
 
-final class TemporalUnLockedState implements LockStateInterface
+final class TemporalUnLockedState extends TemporalLockedStateAbstract
 {
-    private $timeframe;
-    
-    public function __construct(DateRange $timeframe)
-    {
-        $this->timeframe = $timeframe;
-    }
-
     public function lock()
     {
-        if (!$this->timeframe->isWithin(new DateTime())) {
+        if (!$this->dateRange->isWithin(new DateTime())) {
             throw new \DomainException("Timelock active");
         }
 
-        return new TemporalLockedState($this->timeframe);
+        return new TemporalLockedState($this->dateRange);
     }
 
     public function unlock()

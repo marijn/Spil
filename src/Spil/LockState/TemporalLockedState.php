@@ -4,15 +4,8 @@ namespace Spil\LockState;
 
 use Spil\DateRange;
 
-final class TemporalLockedState implements LockStateInterface
+final class TemporalLockedState extends TemporalLockedStateAbstract
 {
-    private $timeframe;
-    
-    public function __construct(DateRange $timeframe)
-    {
-        $this->timeframe = $timeframe;
-    }
-
     public function lock()
     {
         throw new \DomainException("Already locked");
@@ -20,10 +13,10 @@ final class TemporalLockedState implements LockStateInterface
 
     public function unlock()
     {
-        if (!$this->timeframe->isWithin(new \DateTime())) {
+        if (!$this->dateRange->isWithin(new \DateTime())) {
             throw new \DomainException("Timelock active");
         }
 
-        return new TemporalUnlockedState($this->timeframe);
+        return new TemporalUnlockedState($this->dateRange);
     }
 }
