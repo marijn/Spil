@@ -48,7 +48,7 @@ Due to the flexible architecture, we can easily create time based locks.
 $secret = '$3crt3t';
 
 // Create a Lock that is locked
-$lock = new Spil\Lock(new Spil\LockState\TemporalLockedState(new Spil\TimeFrame(new DateTime('yesterday morning'), new DateTime('yesterday noon'))), $secret);
+$lock = new Spil\Lock(new Spil\LockState\TemporalLockedState(new Spil\DateRange(new DateTime('yesterday morning'), new DateTime('yesterday noon'))), $secret);
 
 // Create a "fitting" key
 $key = new Spil\Key($secret);

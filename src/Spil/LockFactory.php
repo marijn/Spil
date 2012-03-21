@@ -18,11 +18,11 @@ final class LockFactory
     
     public function createTemporalUnlockedLock($secret, DateTime $from, DateTime $until)
     {
-        return new Lock($secret, new LockState\TemporalUnlockedState(new TimeFrame($from, $until)));
+        return new Lock($secret, new LockState\TemporalUnlockedState(new DateRange($from, $until)));
     }
     
     public function createTemporalLockedLock($secret, DateTime $from, DateTime $until)
     {
-        return new Lock($secret, new LockState\TemporalLockedState(new TimeFrame($from, $until)));
+        return new Lock($secret, new LockState\TemporalLockedState(new DateRange($from, $until)));
     }
 }

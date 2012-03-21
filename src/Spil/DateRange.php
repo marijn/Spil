@@ -4,7 +4,7 @@ namespace Spil;
 
 use DateTime;
 
-final class TimeFrame
+final class DateRange
 {
     private $from;
     private $until;

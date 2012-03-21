@@ -2,13 +2,13 @@
 
 namespace Spil\LockState;
 
-use Spil\TimeFrame;
+use Spil\DateRange;
 
 final class TemporalLockedState implements LockStateInterface
 {
     private $timeframe;
     
-    public function __construct(TimeFrame $timeframe)
+    public function __construct(DateRange $timeframe)
     {
         $this->timeframe = $timeframe;
     }

@@ -6,7 +6,7 @@ final class TemporalUnLockedState implements LockStateInterface
 {
     private $timeframe;
     
-    public function __construct(TimeFrame $timeframe)
+    public function __construct(DateRange $timeframe)
     {
         $this->timeframe = $timeframe;
     }
