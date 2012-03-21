@@ -1,4 +1,4 @@
-A basic finite state machine implementation for a lock. The implemntation was inspired by a [comment from Gordon on stackoverflow][1].
+A basic finite state machine implementation for a lock. The implementation was inspired by a [comment from Gordon on stackoverflow][1].
 
 # Usage
 
