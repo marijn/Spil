@@ -30,6 +30,11 @@ final class Lock
         $this->state = $this->unlock->lock();
     }
 
+    public function getState()
+    {
+        return $this->state;
+    }
+
     private function insert(Key $key)
     {
         if ($key->getTeeth() !== $this->teeth) {
