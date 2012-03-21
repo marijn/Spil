@@ -1,5 +1,9 @@
 <?php
 
+namespace Spil;
+
+use DateTime;
+
 final class TimeFrame
 {
     private $from;

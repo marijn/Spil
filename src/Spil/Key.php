@@ -1,5 +1,7 @@
 <?php
 
+namespace Spil;
+
 final class Key
 {
     private $teeth;

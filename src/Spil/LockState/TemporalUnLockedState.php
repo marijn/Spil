@@ -1,6 +1,8 @@
 <?php
 
-final class TemporalUnLockedState implements LockState
+namespace Spil\LockState;
+
+final class TemporalUnLockedState implements LockStateInterface
 {
     private $timeframe;
     
@@ -12,7 +14,7 @@ final class TemporalUnLockedState implements LockState
     public function lock()
     {
         if (!$this->timeframe->isWithin(new DateTime())) {
-            throw new DomainException("Timelock active");
+            throw new \DomainException("Timelock active");
         }
 
         return new TemporalLockedState($this->timeframe);
@@ -20,6 +22,6 @@ final class TemporalUnLockedState implements LockState
 
     public function unlock()
     {
-        throw new DomainException("Already unlocked");
+        throw new \DomainException("Already unlocked");
     }
 }

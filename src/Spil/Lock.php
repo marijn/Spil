@@ -1,5 +1,7 @@
 <?php
 
+namespace Spil;
+
 final class Lock
 {
     private $teeth;
@@ -7,7 +9,7 @@ final class Lock
     public function __construct(LockState $state, $teeth = null)
     {
         if (null === $state) {
-            throw new InvalidArgumentException("No state was passed");
+            throw new \InvalidArgumentException("No state was passed");
         }
 
         $this->state = $state;
@@ -31,7 +33,7 @@ final class Lock
     private function insert(Key $key)
     {
         if ($key->getTeeth() !== $this->teeth) {
-            throw new DomainException("Key doesn't fit");
+            throw new \DomainException("Key doesn't fit");
         }
     }
 }
