@@ -9,7 +9,7 @@ final class DateRange
     private $from;
     private $until;
 
-    public function __construct(DateTime $from, DateTime $until)
+    public function __construct(DateTime $from = null, DateTime $until = null)
     {
         $this->from = $from;
         $this->until = $until;
