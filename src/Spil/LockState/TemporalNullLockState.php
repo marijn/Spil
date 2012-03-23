@@ -2,7 +2,7 @@
 
 namespace Spil\LockState;
 
-final class TemporalNullLockedState extends TemporalLockedStateAbstract implements NullLockStateInterface
+final class TemporalNullLockState extends TemporalLockedStateAbstract implements NullLockStateInterface
 {
     public function lock()
     {
