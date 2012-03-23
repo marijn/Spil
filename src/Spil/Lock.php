@@ -6,7 +6,7 @@ final class Lock
 {
     private $teeth;
 
-    public function __construct(LockState $state, $teeth = null)
+    public function __construct(LockState\LockStateInterface $state, $teeth = null)
     {
         if (null === $state) {
             throw new \InvalidArgumentException("No state was passed");
