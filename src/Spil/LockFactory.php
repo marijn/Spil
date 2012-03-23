@@ -8,21 +8,21 @@ final class LockFactory
 {
     public function createUnlockedLock($secret)
     {
-        return new Lock($secret, new LockState\UnlockedState());
+        return new Lock(new LockState\UnlockedState(), $secret);
     }
 
     public function createLockedLock($secret)
     {
-        return new Lock($secret, new LockState\LockedState());
+        return new Lock(new LockState\LockedState(), $secret);
     }
     
     public function createTemporalUnlockedLock($secret, DateTime $from, DateTime $until)
     {
-        return new Lock($secret, new LockState\TemporalUnlockedState(new DateRange($from, $until)));
+        return new Lock(new LockState\TemporalUnlockedState(new DateRange($from, $until)), $secret);
     }
     
     public function createTemporalLockedLock($secret, DateTime $from, DateTime $until)
     {
-        return new Lock($secret, new LockState\TemporalLockedState(new DateRange($from, $until)));
+        return new Lock(new LockState\TemporalLockedState(new DateRange($from, $until)), $secret);
     }
 }
