@@ -2,6 +2,6 @@
 
 namespace Spil\LockState;
 
-final interface NullLockStateInterface extends LockStateInterface
+interface NullLockStateInterface extends LockStateInterface
 {
 }

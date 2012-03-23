@@ -2,7 +2,7 @@
 
 namespace Spil\LockState;
 
-final interface LockStateInterface
+interface LockStateInterface
 {
     function lock();
     function unlock();
