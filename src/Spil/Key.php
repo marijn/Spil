@@ -10,4 +10,9 @@ final class Key
     {
         $this->teeth = $teeth;
     }
+    
+    public function getTeeth()
+    {
+        return $this->teeth;
+    }
 }
