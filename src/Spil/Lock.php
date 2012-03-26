@@ -4,6 +4,7 @@ namespace Spil;
 
 final class Lock
 {
+    private $state;
     private $teeth;
 
     public function __construct(LockState\LockStateInterface $state, $teeth = null)
