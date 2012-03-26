@@ -35,6 +35,11 @@ final class Lock
     {
         return $this->state;
     }
+    
+    public function getTeeth()
+    {
+        return $this->teeth;
+    }
 
     private function insert(Key $key)
     {
