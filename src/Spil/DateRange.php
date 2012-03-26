@@ -27,4 +27,14 @@ final class DateRange
 
         return true;
     }
+    
+    public function getFrom()
+    {
+        return $this->from;
+    }
+    
+    public function getUntil()
+    {
+        return $this->until;
+    }
 }
