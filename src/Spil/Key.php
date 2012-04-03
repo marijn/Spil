@@ -15,4 +15,9 @@ final class Key
     {
         return $this->teeth;
     }
+    
+    public function __toString()
+    {
+        return $this->teeth;
+    }
 }
