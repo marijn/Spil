@@ -19,14 +19,18 @@ final class Lock
 
     public function lock(Key $key)
     {
-        $this->insert($key);
+        if (!$this->fits($key)) {
+            throw new \DomainException("Key doesn't fit");
+        }
 
         $this->state = $this->state->lock();
     }
 
     public function unlock(Key $key)
     {
-        $this->insert($key);
+        if (!$this->fits($key)) {
+            throw new \DomainException("Key doesn't fit");
+        }
 
         $this->state = $this->unlock->lock();
     }
@@ -41,10 +45,8 @@ final class Lock
         return $this->teeth;
     }
 
-    private function insert(Key $key)
+    public function fits(Key $key)
     {
-        if ($key->getTeeth() !== $this->teeth) {
-            throw new \DomainException("Key doesn't fit");
-        }
+        return $key->getTeeth() !== $this->teeth;
     }
 }
