@@ -34,6 +34,16 @@ final class Lock
 
         $this->state = $this->unlock->lock();
     }
+    
+    public function isUnlocked()
+    {
+        return $this->state->isUnlocked();
+    }
+    
+    public function isLocked()
+    {
+        return $this->state->isLocked();
+    }
 
     public function getState()
     {

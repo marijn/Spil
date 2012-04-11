@@ -13,4 +13,14 @@ final class UnLockedState implements LockStateInterface
     {
         throw new \DomainException("Already unlocked");
     }
+
+    public function isUnlocked()
+    {
+        return true;
+    }
+    
+    public function isLocked()
+    {
+        return false;
+    }
 }

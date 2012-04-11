@@ -17,4 +17,14 @@ final class TemporalUnLockedState extends TemporalLockedStateAbstract
     {
         throw new \DomainException("Already unlocked");
     }
+
+    public function isUnlocked()
+    {
+        return true;
+    }
+    
+    public function isLocked()
+    {
+        return false;
+    }
 }

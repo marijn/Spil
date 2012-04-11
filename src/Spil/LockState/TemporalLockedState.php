@@ -19,4 +19,14 @@ final class TemporalLockedState extends TemporalLockedStateAbstract
 
         return new TemporalUnlockedState($this->dateRange);
     }
+
+    public function isUnlocked()
+    {
+        return false;
+    }
+    
+    public function isLocked()
+    {
+        return true;
+    }
 }

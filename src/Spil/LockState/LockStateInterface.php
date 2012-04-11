@@ -6,4 +6,6 @@ interface LockStateInterface
 {
     function lock();
     function unlock();
+    function isUnlocked();
+    function isLocked();
 }

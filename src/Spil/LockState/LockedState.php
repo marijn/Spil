@@ -13,4 +13,14 @@ final class LockedState implements LockStateInterface
     {
         return new UnlockedState;
     }
+
+    public function isUnlocked()
+    {
+        return false;
+    }
+    
+    public function isLocked()
+    {
+        return true;
+    }
 }

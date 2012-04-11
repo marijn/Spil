@@ -2,7 +2,7 @@
 
 namespace Spil\LockState;
 
-final class TemporalNullLockState extends TemporalLockedStateAbstract implements NullLockStateInterface
+final class TemporalNullLockState extends TemporalLockedStateAbstract
 {
     public function lock()
     {
@@ -12,5 +12,15 @@ final class TemporalNullLockState extends TemporalLockedStateAbstract implements
     public function unlock()
     {
         return $this;
+    }
+
+    public function isUnlocked()
+    {
+        return null;
+    }
+    
+    public function isLocked()
+    {
+        return null;
     }
 }
