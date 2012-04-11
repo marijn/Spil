@@ -2,7 +2,7 @@
 
 namespace Spil\LockState;
 
-final class UnLockedState implements LockStateInterface
+final class UnlockedState implements LockStateInterface
 {
     public function lock()
     {

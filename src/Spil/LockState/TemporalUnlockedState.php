@@ -2,7 +2,7 @@
 
 namespace Spil\LockState;
 
-final class TemporalUnLockedState extends TemporalLockedStateAbstract
+final class TemporalUnlockedState extends TemporalLockedStateAbstract
 {
     public function lock()
     {
