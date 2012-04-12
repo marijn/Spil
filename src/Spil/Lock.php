@@ -32,7 +32,7 @@ final class Lock
             throw new \DomainException("Key doesn't fit");
         }
 
-        $this->state = $this->unlock->lock();
+        $this->state = $this->state->unlock();
     }
     
     public function isUnlocked()
