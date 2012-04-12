@@ -57,6 +57,6 @@ final class Lock
 
     public function fits(Key $key)
     {
-        return $key->getTeeth() !== $this->teeth;
+        return $key->getTeeth() === $this->teeth;
     }
 }
