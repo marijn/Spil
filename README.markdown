@@ -1,3 +1,5 @@
+> **This is a an experiment for the better part of it. However, if you feel this is somehow of use to you, please let me know. -- Marijn**
+
 A basic finite state machine implementation for a lock. The implementation was inspired by a [comment from Gordon on stackoverflow][1].
 
 I might have gone overboard namespacing the hell out of it. You might want to check the previous revisions. Any thoughts on the code or functionality are welcome.
