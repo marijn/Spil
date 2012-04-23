@@ -57,7 +57,6 @@ final class Lock
 
     public function fits(Key $key)
     {
-        // TODO: Find the issue for the required loose comparison with a unit test
-        return $key->getTeeth() == $this->teeth;
+        return $key->getTeeth() === $this->teeth;
     }
 }
