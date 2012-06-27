@@ -25,7 +25,7 @@ final class DateRange
             $isWithin = false;
         }
 
-        return true;
+        return $isWithin;
     }
     
     public function getFrom()
